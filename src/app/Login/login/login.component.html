@@ -3,50 +3,55 @@
    
   <div class="background-container">
     
-   <div class="row">
-   
-     <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-12 col-xxl-12">
+    <div class="row">
+    
+      <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-12 col-xxl-12">
+        
+       <div class="login-container">
+         <div class="col-md-12 errorcontent">
+         <small>{{errorMessage}}</small>  
+         </div>
+         <h5>Login Form</h5>
+         <form action="" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        
+         <div class="form-group">
+             <label for="password">Email:</label>
+             <input type="text" formControlName="email" class="form-control"
+             [ngClass]="{ 'is-invalid': submitted && loginForm.controls['email'].errors }">
+             <div *ngIf="(submitted && loginForm.controls['email']?.invalid)">
+               <small class="text-danger" class="errorclr">Email is required.</small>
+             </div>
+           </div>
        
-      <div class="login-container">
-        <div class="col-md-12 errorcontent">
-        <small>{{errorMessage}}</small>  
-        </div>
-        <h5>Login Form</h5>
-        <form action="" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-       
-        <div class="form-group">
-            <label for="password">Email:</label>
-            <input type="text" formControlName="email" class="form-control">
-            <div *ngIf="loginForm.controls['email']?.invalid && loginForm.controls['email'].touched">
-              <small class="text-danger">Email is required.</small>
-            </div>
-          </div>
-      
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" formControlName="password" id="password" class="form-control">
-            <div *ngIf="loginForm.controls['password']?.invalid && loginForm.controls['password'].touched">
-              <small class="text-danger">Password is required.</small>
-            </div>
-          </div>
-        <button class="btn btn-success mt-2 me-4 text-center" type="submit">Login</button>
-        <button class="btn btn-primary mt-2 text-center" type="button" routerLink="/signup">Signup</button>
-        </form>
-    </div>
-
-  
+         <div class="form-group">
+             <label for="password">Password</label>
+             <input type="password" formControlName="password" id="password" class="form-control"  
+             [ngClass]="{ 'is-invalid': submitted && loginForm.controls['password'].errors }"
+             />
+             <div *ngIf="submitted && loginForm.controls?.['password']?.errors">
+               <small  *ngIf="loginForm.controls?.['password']?.errors?.['required']" class="errorclr">Password is required</small>
+               <small *ngIf="loginForm.controls?.['password']?.errors?.['minlength']" class="errorclr">Password must be at least 6 characters</small>
+             </div>
+         
+           </div>
+         <button class="btn btn-success mt-2 me-4 text-center" type="submit">Login</button>
+         <button class="btn btn-primary mt-2 text-center" type="button" routerLink="/signup">Signup</button>
+         </form>
      </div>
-    
-   </div>
-    </div>
-
-    
-    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" color="#fff" type="ball-spin-clockwise">
-     
-      <div class="loading-content">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Youtube_loading_symbol_1_(wobbly).gif" alt="Loading..." />
-        <p>Loading, please wait...</p>
+ 
+   
       </div>
-    </ngx-spinner>
-
-  
+     
+    </div>
+     </div>
+ 
+     
+     <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" color="#fff" type="ball-spin-clockwise">
+      
+       <div class="loading-content">
+         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Youtube_loading_symbol_1_(wobbly).gif" alt="Loading..." />
+         <p>Loading, please wait...</p>
+       </div>
+     </ngx-spinner>
+ 
+   

@@ -97,101 +97,11 @@
   "users": [
     {
       "id": "d1db",
-      "name": "Abhi",
-      "email": "abhi@gmail.com",
-      "password": "098765",
+      "name": "User",
+      "email": "user@gmail.com",
+      "password": "12345",
       "phoneNumber": "1234567890"
-    },
-    {
-      "id": "a1af",
-      "name": "shubh",
-      "email": "shubh@gmail.com",
-      "password": "123456",
-      "phoneNumber": "1234567890"
-    },
-    {
-      "id": "68b8",
-      "name": "x",
-      "email": "x@gmail.com",
-      "password": "123456",
-      "phoneNumber": "1234565433"
-    },
-    {
-      "id": "9eb5",
-      "name": "harsh",
-      "email": "harsh@gmail.com",
-      "password": "234567",
-      "phoneNumber": "1234567890"
-    },
-    {
-      "id": "4416",
-      "name": "rajneesh@gmail.com",
-      "email": "rajneesh@gmail.com",
-      "password": "123456",
-      "phoneNumber": "1111111111"
-    },
-    {
-      "id": "7e16",
-      "name": "shubhamyadav",
-      "email": "shubhamyadav@gmail.com",
-      "password": "123456",
-      "phoneNumber": "9800988900"
-    },
-    {
-      "id": "3033",
-      "name": "shubhamyadav",
-      "email": "shubhamyadav@gmail.com",
-      "password": "123456",
-      "phoneNumber": "9800988900"
-    },
-    {
-      "id": "b711",
-      "name": "shubhamyadav",
-      "email": "shubhamyadav@gmail.com",
-      "password": "123456",
-      "phoneNumber": "9800988900"
-    },
-    {
-      "id": "cb88",
-      "name": "shubham.yadav",
-      "email": "shubham.yadav@gmail.com",
-      "password": "111111",
-      "phoneNumber": "9098909890"
-    },
-    {
-      "id": "4c92",
-      "name": "shubham.yadav",
-      "email": "xyz@gmail.com",
-      "password": "111111",
-      "phoneNumber": "9098909890"
-    },
-    {
-      "id": "3f96",
-      "name": "a",
-      "email": "a@gmail.com",
-      "password": "123322",
-      "phoneNumber": "9878908700"
-    },
-    {
-      "id": "a6d7",
-      "name": "a",
-      "email": "abc@gmail.com",
-      "password": "123456",
-      "phoneNumber": "9898987898"
-    },
-    {
-      "id": "b6e9",
-      "name": "a",
-      "email": "abcd@gmail.com",
-      "password": "123456",
-      "phoneNumber": "9878987891"
-    },
-    {
-      "id": "d4df",
-      "name": "ankit",
-      "email": "ankit@gmail.com",
-      "password": "123456",
-      "phoneNumber": "8987898789"
     }
+   
   ]
 }

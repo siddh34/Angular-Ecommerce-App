@@ -56,7 +56,6 @@ console.log(this.signupForm.value, this.signupForm.valid);
 
     this.authService.signup(user).subscribe(
       (res:any) => {
-        debugger
         if(res){
           console.log('User registered successfully');
           this.successMessage = 'User registered successfully';

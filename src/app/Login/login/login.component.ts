@@ -28,12 +28,16 @@ export class LoginComponent implements OnInit{
   }
 
   ngOnInit(): void {}
-
+  submitted:boolean=false;
   onSubmit(): void {
+    this.submitted=true;
+    this.spinner.show();
     if (this.loginForm.valid) {
+      
       this.authService.login(this.loginForm.value).subscribe((response:any) => {
-        this.spinner.show();
+     
         if(response.Status && response.Data){
+
           const Token = this.token();
           this.toastr.success('Login Success!');
          
@@ -49,12 +53,20 @@ export class LoginComponent implements OnInit{
        else{
         this.errorMessage = response.Status;
         this.toastr.error(this.errorMessage);
-         
-        this.hideSpinner()
+        setTimeout(() => {
+          this.spinner.hide();
+        }, 1000);
        
        
        }
       });
+    }
+    else{
+  this.toastr.error('Invalid form');
+        setTimeout(() => {
+          this.spinner.hide();
+        }, 1000);
+       
     }
   }
 
