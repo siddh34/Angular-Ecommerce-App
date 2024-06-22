@@ -27,3 +27,19 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 # Angular-Assignment
 Here I have uploaded the angular assignment
+
+
+GUIDE
+For Clone GIT
+git clone https://github.com/yourusername/angular-project.git
+
+1) Open the code in VS Code 
+2) Run Command - npm install
+3) Run Command - npm install -g json-server 
+4) Run Command json-server --watch db.json 
+5) Run Command ng serve  
+
+Note:- Please run the above command in order.
+Thanks!
+
+SHUBHAM YADAV
