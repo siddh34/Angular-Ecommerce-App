@@ -1,0 +1,34 @@
+
+.body{
+  padding: 0;
+}
+.background-container {
+  background-image: url('https://img.freepik.com/free-photo/arrangement-black-friday-shopping-carts-with-copy-space_23-2148667047.jpg?t=st=1718865333~exp=1718868933~hmac=2f4bf033944d8b4b56ac158ddbf52e461e6c3bccfb40502c80a4859764969602&w=740');
+  background-size: cover;
+  background-position: center; 
+  height: 100vh; 
+  top:0;
+  width: 100%;
+}
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px #ccc;
+  border-radius: 5px;
+  background-color: #ff5555;
+  color: white;
+}
+
+  button {
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .errorcontent{
+    text-align: center;
+    color: #ccc;
+  }
+

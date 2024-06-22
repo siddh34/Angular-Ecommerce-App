@@ -1,0 +1,63 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <header class="col-12 bg-primary text-white text-center sticky-top">
+     <div class="row mb-3">
+         <div class="col-md-1">
+            <button class="toggle-button" type="button" (click)="toggleSidebar()">
+                ☰
+              </button>
+         </div>
+         <div class="col-md-11">
+             <app-header></app-header>
+         </div>
+     </div>
+       
+      </header>
+  </div>
+  <div class="row">
+    <nav [ngClass]="{'show': isSidebarOpen, 'sidebar': true}" class="col-md-3 col-lg-2 bg-light">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+            <div class="mb-5"><h6>E-commerce Home</h6>
+            </div>
+          <!-- <li class="nav-item">
+            <a class="nav-link active " aria-current="page" href="#">
+              Dashboard
+            </a>
+          </li> -->
+          <li class="nav-item" *ngFor="let item of menuItems">
+            <a 
+              class="nav-link" 
+              [ngClass]="{'active': item.isActive}" 
+              (click)="setActive(item)"
+              [routerLink]="item.route">
+              {{ item.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="backdrop" *ngIf="isSidebarOpen" (click)="toggleSidebar()"></div>
+
+    <main [ngClass]="{'disabled-content': isSidebarOpen}" class="col-md-12 ms-sm-auto col-lg-12 px-md-4 mt-5">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 mt-1 border-bottom">
+      </div>
+      <div class="row" style="min-height: 70vh!important;">
+        <div class="co-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    
+    </main>
+  </div>
+  <div class="row">
+    <footer class="col-12 bg-secondary text-white text-center py-2">
+      <app-footer></app-footer>
+    </footer>
+  </div>
+</div>
+
+  
+  

@@ -1,0 +1,86 @@
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+        <div class="background-container ">
+            <!-- <h2>Sign Up</h2> -->
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-12 col-xxl-12">
+            <div class="login-container">
+                <h5>Signup Form</h5>
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  formControlName="name"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+                />
+                <div *ngIf="submitted && f?.['name']?.errors" class="invalid-feedback">
+                  <small *ngIf="f?.['name']?.errors?.['required']" class="errorclr">Name is required</small>
+                </div>
+              </div>
+              <div class="form-group">
+                  <label for="password">Email:</label>
+                  <input type="text" formControlName="email" class="form-control">
+                  <div *ngIf="signupForm.controls['email']?.invalid && signupForm.controls['email'].touched">
+                    <small class="text-danger" class="errorclr">Email is required.</small>
+                  </div>
+                </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  formControlName="password"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+                />
+                <div *ngIf="submitted && f?.['password']?.errors" class="invalid-feedback">
+                  <small  *ngIf="f?.['password']?.errors?.['required']" class="errorclr">Password is required</small>
+                  <small *ngIf="f?.['password']?.errors?.['minlength']" class="errorclr">Password must be at least 6 characters</small>
+                </div>
+              </div>
+          
+              <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input
+                  type="text"
+                  id="phoneNumber"
+                  formControlName="phoneNumber"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f['phoneNumber'].errors }"
+                />
+                <div *ngIf="submitted && f?.['phoneNumber']?.errors" class="invalid-feedback">
+                  <small *ngIf="f?.['phoneNumber']?.errors?.['required']" class="errorclr">Phone Number is required</small>
+                  <small *ngIf="f?.['phoneNumber']?.errors?.['pattern']" class="errorclr">Phone Number must be 10 digits</small>
+                </div>
+              </div>
+          
+              <div class="row mt-3">  
+                  <div class="col-md-12 text-right">
+                      <button type="submit" class="btn btn-success me-5 ">Sign Up</button>
+                      <button type="button" class="btn btn-primary" routerLink="/login">Login</button>
+                  </div>  
+             
+              </div>
+          
+            </form>
+            <div *ngIf="successMessage" class="alert alert-success mt-3">
+              {{ successMessage }}
+            </div>
+          </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+ 
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" color="#fff" type="ball-spin-clockwise">
+     
+  <div class="loading-content">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Youtube_loading_symbol_1_(wobbly).gif" alt="Loading..." />
+    <p>Loading, please wait...</p>
+  </div>
+</ngx-spinner>

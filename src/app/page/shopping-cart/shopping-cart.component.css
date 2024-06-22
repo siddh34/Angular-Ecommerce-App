@@ -1,0 +1,55 @@
+.cart-item {
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+}
+.cart-item h3, .cart-item img, .cart-item p, .cart-item input, .cart-item button {
+    flex: 1 1 auto;
+}
+.cart-item img {
+    max-width: 100px;
+    height: auto;
+}
+
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .item-details {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-input {
+    width: 60px;
+    text-align: center;
+    margin: 0 10px;
+  }
+  .bi-arrow-return-left:hover {
+    color: #767724; /* Change color on hover */
+    transform: scale(1.2); /* Slightly increase size on hover */
+}
+  
+  
+  .content {
+    text-align: center;
+    top: 10;
+    margin-top: 82px;
+}
+
+
+.custom-tooltip .tooltip-inner {
+  background-color: #343a40; /* Change the background color */
+  color: #fff; /* Change the text color */
+  border-radius: 0.25rem; /* Change the border-radius */
+  padding: 0.5rem 1rem; /* Add padding for better readability */
+}

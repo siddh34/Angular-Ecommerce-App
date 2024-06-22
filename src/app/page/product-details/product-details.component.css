@@ -1,0 +1,62 @@
+.images {
+    width: 200px;
+   }
+   
+   .add {
+    color: #fff;
+    background-color: #275e96;
+    border-color: #f9fafb;
+}
+.cncl{
+    color: white;
+    background-color: red;
+}
+.bck{
+        background-color: #ac7c3e;
+        color: white;
+    
+}
+
+/* toast-notifications.component.css */
+.toast-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1050; /* Adjust as needed */
+    width: auto;
+    max-width: calc(100% - 2rem); /* Take up to 100% width minus spacing */
+  }
+  
+  .toast {
+    text-align: center;
+    font-size: .875rem;
+    background-color: rgba(255, 255, 255, .85);
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .1); /* Add border */
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    border-radius: .25rem;
+    width: 350px; /* Adjust width as needed */
+    pointer-events: auto;
+    margin: 1rem auto; /* Center the toast */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 576px) {
+    .toast {
+      width: calc(100% - 2rem);
+      max-width: calc(100% - 2rem);
+    }
+  }
+
+
+
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-input {
+    width: 60px;
+    text-align: center;
+    margin: 0 10px;
+  }

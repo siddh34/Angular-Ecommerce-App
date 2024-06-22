@@ -1,0 +1,36 @@
+
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+    <main>
+      <div class="container">
+        <h1>Product List Page</h1>
+        <h6>Featured Products</h6>
+        <div class="product-list">
+         
+            <button class="btn btn-success" type="button" (click)="sortProductsByPrice()">Sort by Price</button>
+            <div *ngFor="let product of products" class="mb-4">
+              <ng-container class="mb-2">
+                <h2>{{ product.name }}</h2>
+                <img class="images" width="200" [src]="product.imageUrl" alt="{{ product.name }}" />
+          
+                <p>{{ product.description }}</p>
+                <p>{{ product.price | currency }}</p>
+                <a [routerLink]="['/products/product', product.id]">View Details</a>
+              </ng-container>
+              
+            </div>
+      
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+ 
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" color="#fff" type="ball-spin-clockwise">
+     
+  <div class="loading-content">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Youtube_loading_symbol_1_(wobbly).gif" alt="Loading..." />
+    <p>Loading, please wait...</p>
+  </div>
+</ngx-spinner>

@@ -1,0 +1,33 @@
+.header {
+    height: 60px;
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+    .nav {
+      display: flex;
+      flex-wrap: nowrap!important;
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+  }
+  
+  .navbar {
+    margin-left: auto;
+  }
+  
+  .nav-link {
+    margin-right: 20px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }

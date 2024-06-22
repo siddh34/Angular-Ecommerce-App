@@ -1,0 +1,11 @@
+{
+    "/auth/*": {
+      "target": "https://mockapi.io",
+      "secure": true,
+      "changeOrigin": true,
+      "logLevel": "debug",
+      "pathRewrite": {
+        "^/auth": ""
+      }
+    }
+  }
