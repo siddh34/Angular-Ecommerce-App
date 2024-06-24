@@ -6,6 +6,7 @@
   directory = "netlify/functions"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/api/*"
+  to = "/.netlify/functions/json-server"
   status = 200
+
