@@ -38,3 +38,5 @@ exports.handler = async (event, context) => {
     body: response.body || '',
   };
 };
+
+module.exports = jsonServer.router();

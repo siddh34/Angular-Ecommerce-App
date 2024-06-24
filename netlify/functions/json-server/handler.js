@@ -19,4 +19,5 @@ const handler = async (event, context) => {
   return response;
 };
 
-module.exports = { handler };
+// Export the handler function directly
+module.exports.handler = handler;
