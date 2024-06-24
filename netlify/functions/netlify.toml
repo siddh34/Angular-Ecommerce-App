@@ -1,5 +1,5 @@
 [build]
-  publish = "dist/your-angular-app"
+  publish = "dist/ecommerce-app"
   command = "ng build --prod"
 
 [functions]
