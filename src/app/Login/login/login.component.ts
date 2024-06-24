@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit{
     if (this.loginForm.valid) {
       
       this.authService.login(this.loginForm.value).subscribe((response:any) => {
-     
+     debugger
         if(response.Status && response.Data){
 
           const Token = this.token();

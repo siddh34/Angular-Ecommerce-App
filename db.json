@@ -99,9 +99,22 @@
       "id": "d1db",
       "name": "User",
       "email": "user@gmail.com",
-      "password": "12345",
+      "password": "123456",
       "phoneNumber": "1234567890"
+    },
+    {
+      "id": "0bed",
+      "name": "shubh",
+      "email": "shubh@gmail.com",
+      "password": "123456",
+      "phoneNumber": "8909890989"
+    },
+    {
+      "id": "381c",
+      "name": "siddhart",
+      "email": "siddhart@gmail.com",
+      "password": "123456",
+      "phoneNumber": "9890987890"
     }
-   
   ]
 }

@@ -13,6 +13,8 @@ import { SignupComponent } from './Signup/signup/signup.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { AuthInterceptor } from './Interceptors/auth.interceptor';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
       preventDuplicates: true,
     }),
   ],
-  providers: [],
+  providers: [AuthInterceptor,AuthService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

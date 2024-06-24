@@ -9,7 +9,8 @@ import { Product } from '../models/Product';
 export class ProductService {
 
  // private apiUrl = 'https://mockapi.io/products';
- private apiUrl = 'http://localhost:3000/products';
+// private apiUrl = 'http://localhost:3000/products';
+private apiUrl = '/.netlify/functions/json-server/products';
 
   constructor(private http: HttpClient) {}
 

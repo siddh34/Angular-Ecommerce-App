@@ -9,14 +9,15 @@ import { CartService } from './cart.service';
 export class AuthService {
 
  // private apiUrl = 'https://mockapi.io/auth';
- private apiUrl = 'http://localhost:3000';
-  
+ //private apiUrl = 'http://localhost:3000';
+  private apiUrl = '/.netlify/functions/json-server/products';
   constructor(private http: HttpClient, private cartService:CartService) {}
 
  
   login(credentials: { email: string; password: string }): Observable<any> {
     return this.http.get<any[]>(`${this.apiUrl}/users?email=${credentials.email}`).pipe(
       map(users => {
+        debugger
         if (users.length > 0) {
           const user = users.find(u => u.password === credentials.password);
         
