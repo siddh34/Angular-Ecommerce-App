@@ -1,42 +1,23 @@
-// const server = require('./json-server');
+const jsonServer = require('json-server');
+const server = jsonServer.create();
+const router = jsonServer.router('./netlify/functions/json-server/db.json');
+const middlewares = jsonServer.defaults();
 
-// exports.handler = async (event, context) => {
-//   const response = await new Promise((resolve, reject) => {
-//     server(event, context, (error, result) => {
-//       if (error) {
-//         reject(error);
-//       } else {
-//         resolve(result);
-//       }
-//     });
-//   });
+server.use(middlewares);
+server.use(router);
 
-//   return {
-//     statusCode: response.statusCode,
-//     headers: response.headers,
-//     body: response.body,
-//   };
-// };
-
-
-const server = require('./json-server');
-
-exports.handler = async (event, context) => {
+const handler = async (event, context) => {
   const response = await new Promise((resolve, reject) => {
-    server(event, context, (error, result) => {
-      if (error) {
-        reject(error);
+    server.handle(event, context, (err, res) => {
+      if (err) {
+        reject(err);
       } else {
-        resolve(result);
+        resolve(res);
       }
     });
   });
-
-  return {
-    statusCode: response.statusCode || 200,
-    headers: response.headers || { 'Content-Type': 'application/json' },
-    body: response.body || '',
-  };
+  return response;
 };
 
-module.exports = jsonServer.router();
+// Export the handler function directly
+module.exports.handler = handler;
