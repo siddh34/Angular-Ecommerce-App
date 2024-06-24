@@ -1,0 +1,11 @@
+[build]
+  publish = "dist/your-angular-app"
+  command = "ng build --prod"
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
