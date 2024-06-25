@@ -64,11 +64,13 @@ export class AuthService {
       mergeMap((existingUser: any) => {
         if (existingUser.length > 0) {
           // Email already exists, return an error
+          console.log("helllooo")
           const errorMessage =
             'Email is already registered. Please use a different email.';
           return throwError(errorMessage);
         } else {
           // Email does not exist, proceed with signup
+          console.log('Signing up user:', user);
           return this.http.post<any>(`${this.apiUrl}/users`, user).pipe(
             catchError((error) => {
               // console.error('Error registering user:', error);
