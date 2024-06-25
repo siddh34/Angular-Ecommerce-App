@@ -72,7 +72,7 @@ const handler = async (event, context) => {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "Content-Type",
           },
-          body: JSON.stringify(user),
+          body: JSON.stringify([user]),
         };
       } else {
         return {
