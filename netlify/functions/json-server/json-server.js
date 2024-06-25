@@ -57,6 +57,7 @@ const handler = async (event, context) => {
         }
 
         const user = data.users.find((u) => u.email === email);
+        console.log("userrr::", user);
 
         if (!user) {
           return {
@@ -65,7 +66,7 @@ const handler = async (event, context) => {
               "Access-Control-Allow-Origin": "*",
               "Access-Control-Allow-Headers": "Content-Type",
             },
-            body: null,
+            body: [],
           };
         }
 
