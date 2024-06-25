@@ -4,13 +4,13 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Product } from '../models/Product';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
-
- // private apiUrl = 'https://mockapi.io/products';
-// private apiUrl = 'http://localhost:3000/products';
-private apiUrl = '/.netlify/functions/json-server/products';
+  // private apiUrl = 'https://mockapi.io/products';
+  // private apiUrl = 'http://localhost:3000/products';
+  private apiUrl =
+    'https://ecommerce-sid.netlify.app/.netlify/functions/json-server/products';
 
   constructor(private http: HttpClient) {}
 
@@ -21,5 +21,4 @@ private apiUrl = '/.netlify/functions/json-server/products';
   getProductById(id: number): Observable<Product> {
     return this.http.get<Product>(`${this.apiUrl}/${id}`);
   }
-
 }
