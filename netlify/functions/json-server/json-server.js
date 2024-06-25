@@ -7,8 +7,6 @@ const handler = async (event, context) => {
 
         const user = JSON.parse(event.body);
 
-        console.log("user::::::::::", user);
-
         if (!user.email || !user.name || !user.password || !user.phoneNumber) {
           return {
             statusCode: 400,
@@ -37,7 +35,7 @@ const handler = async (event, context) => {
         data.users.push(user);
 
         return {
-          statusCode: 201,
+          statusCode: 200,
           headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "Content-Type",
@@ -61,7 +59,6 @@ const handler = async (event, context) => {
         }
 
         const user = data.users.find((u) => u.email === email);
-        console.log("userrr::", user);
 
         if (!user) {
           return {
