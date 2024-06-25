@@ -9,6 +9,10 @@ const handler = async (event, context) => {
         if (!user.email || !user.name || !user.password || !user.phoneNumber) {
           return {
             statusCode: 400,
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Headers": "Content-Type",
+            },
             body: JSON.stringify({ error: "Missing required user fields" }),
           };
         }
@@ -18,6 +22,10 @@ const handler = async (event, context) => {
         if (existingUser) {
           return {
             statusCode: 409,
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Headers": "Content-Type",
+            },
             body: JSON.stringify({ error: "User already exists" }),
           };
         }
@@ -35,6 +43,10 @@ const handler = async (event, context) => {
         if (!email) {
           return {
             statusCode: 400,
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Headers": "Content-Type",
+            },
             body: JSON.stringify({
               error: "Email query parameter is required",
             }),
@@ -46,12 +58,20 @@ const handler = async (event, context) => {
         if (!user) {
           return {
             statusCode: 404,
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Headers": "Content-Type",
+            },
             body: JSON.stringify({ error: "User not found" }),
           };
         }
 
         return {
           statusCode: 200,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type",
+          },
           body: JSON.stringify(user),
         };
       } else {
@@ -68,7 +88,11 @@ const handler = async (event, context) => {
         // Handle GET /products
         return {
           statusCode: 200,
-          body: JSON.stringify(data.products)
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type",
+          },
+          body: JSON.stringify(data.products),
         };
       } else if (event.httpMethod === 'GET' && productIdMatch) {
         // Handle GET /products/:id
@@ -78,13 +102,21 @@ const handler = async (event, context) => {
         if (!product) {
           return {
             statusCode: 404,
-            body: JSON.stringify({ error: 'Product not found' })
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Headers": "Content-Type",
+            },
+            body: JSON.stringify({ error: "Product not found" }),
           };
         }
 
         return {
           statusCode: 200,
-          body: JSON.stringify(product)
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type",
+          },
+          body: JSON.stringify(product),
         };
       }
       else {
@@ -98,6 +130,10 @@ const handler = async (event, context) => {
     console.error("Error handling request:", error);
     return {
       statusCode: 500,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+      },
       body: JSON.stringify({ error: "Internal Server Error" }),
     };
   }
