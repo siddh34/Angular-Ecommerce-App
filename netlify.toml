@@ -1,6 +1,6 @@
 [build]
   publish = "dist/ecommerce-app"
-  command = "ng build --c=prod"
+  command = "ng build"
 
 [functions]
   directory = "netlify/functions"
