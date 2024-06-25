@@ -20,10 +20,10 @@ export class AuthService {
         map((users) => {
           debugger;
           if (users.length > 0) {
-            const user = users.find((u) => u.password === credentials.password);
+            // const user = users.find((u) => u.password === credentials.password);
 
-            if (user) {
-              let obj = { Status: 'SUCCESS', Data: user };
+            if (users) {
+              let obj = { Status: 'SUCCESS', Data: users };
               return obj;
             } else {
               let message = 'Email or Password is Invalid. Please Try Again';
