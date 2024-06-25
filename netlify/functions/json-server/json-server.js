@@ -61,7 +61,7 @@ const handler = async (event, context) => {
 
         if (!user) {
           return {
-            statusCode: 404,
+            statusCode: 200,
             headers: {
               "Access-Control-Allow-Origin": "*",
               "Access-Control-Allow-Headers": "Content-Type",
