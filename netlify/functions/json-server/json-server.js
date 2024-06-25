@@ -62,7 +62,7 @@ const handler = async (event, context) => {
         };
       }
     } else if (event.path.includes('/api/products')) {
-      const productIdMatch = path.match(/\/api\/products\/(\d+)/);
+      const productIdMatch = event.path.match(/\/api\/products\/(\d+)/);
 
       if (event.httpMethod === 'GET' && !productIdMatch) {
         // Handle GET /products
