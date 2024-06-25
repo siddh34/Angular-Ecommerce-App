@@ -4,7 +4,10 @@ const handler = async (event, context) => {
   try {
     if (event.path.includes("/api/users")) {
       if (event.httpMethod === "POST") {
+
         const user = JSON.parse(event.body);
+
+        console.log("user", user);
 
         if (!user.email || !user.name || !user.password || !user.phoneNumber) {
           return {
