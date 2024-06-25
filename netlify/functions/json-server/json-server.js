@@ -2,7 +2,7 @@ import data from "./db.json"
 
 const handler = async (event, context) => {
   try {
-    if (event.path.includes("/users")) {
+    if (event.path.includes("/api/users")) {
       if (event.httpMethod === "POST") {
         const user = JSON.parse(event.body);
 
@@ -61,8 +61,8 @@ const handler = async (event, context) => {
           body: JSON.stringify({ error: "Method Not Allowed" }),
         };
       }
-    } else if (event.path.includes('/products')) {
-      const productIdMatch = event.path.match(/\/products\/(\d+)/);
+    } else if (event.path.includes('/api/products')) {
+      const productIdMatch = path.match(/\/api\/products\/(\d+)/);
 
       if (event.httpMethod === 'GET' && !productIdMatch) {
         // Handle GET /products

@@ -1,12 +1,16 @@
 [build]
   publish = "dist/ecommerce-app"
-  command = "ng build"
+  command = "ng build --prod"
 
 [functions]
   directory = "netlify/functions"
 
 [[redirects]]
-  from = "*"
+  from = "/api/*"
   to = "/.netlify/functions/json-server"
   status = 200
 
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
