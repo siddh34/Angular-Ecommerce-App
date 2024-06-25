@@ -7,7 +7,7 @@ const handler = async (event, context) => {
 
         const user = JSON.parse(event.body);
 
-        console.log("user", user);
+        console.log("user::::::::::", user);
 
         if (!user.email || !user.name || !user.password || !user.phoneNumber) {
           return {
