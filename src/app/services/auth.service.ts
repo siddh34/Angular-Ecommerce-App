@@ -10,7 +10,7 @@ export class AuthService {
   // private apiUrl = 'https://mockapi.io/auth';
   //private apiUrl = 'http://localhost:3000';
   private apiUrl =
-    'https://ecommerce-sid.netlify.app/.netlify/functions/json-server';
+    'https://ecommerce-sid.netlify.app/.netlify/functions/json-server/api';
   constructor(private http: HttpClient, private cartService: CartService) {}
 
   login(credentials: { email: string; password: string }): Observable<any> {

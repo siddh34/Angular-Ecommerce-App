@@ -10,7 +10,7 @@ export class ProductService {
   // private apiUrl = 'https://mockapi.io/products';
   // private apiUrl = 'http://localhost:3000/products';
   private apiUrl =
-    'https://ecommerce-sid.netlify.app/.netlify/functions/json-server/products';
+    'https://ecommerce-sid.netlify.app/.netlify/functions/json-server/api/products';
 
   constructor(private http: HttpClient) {}
 
