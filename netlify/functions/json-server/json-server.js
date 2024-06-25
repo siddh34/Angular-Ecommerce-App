@@ -38,6 +38,10 @@ const handler = async (event, context) => {
 
         return {
           statusCode: 201,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type",
+          },
           body: JSON.stringify(user),
         };
       } else if (event.httpMethod === "GET") {
